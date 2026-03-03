@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TuCampus - Tracking</title>
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/components.css">
+</head>
+<body class="centered"> <div class="phone"> <div class="navbar"> <div class="nav-left"> <button class="iconbtn" onclick="history.back()">←</button> <h2>Tracking</h2> </div> <div class="nav-right">
+      <button class="iconbtn" title="Configuración">⚙️</button>
+      <button class="iconbtn" onclick="toggleTheme()" title="Cambiar tema">🌓</button>
+    </div>
+  </div> <div class="card"> <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;"> <div> <div style="font-weight:900;">Pedido #1021</div> <div style="margin-top:4px;font-size:12px;color:var(--muted);">Recoger en cafetería</div> </div> <div style="padding:7px 10px;border-radius:999px;font-size:12px;font-weight:900;border:1px solid rgba(245,158,11,.35); background:rgba(245,158,11,.15);">⏳ En preparación</div> </div> <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:#1F2937;"> <div> <div style="font-weight:900;">ETA: 10–15 min</div> <div style="margin-top:3px;font-size:12px;color:var(--muted);">Tiempo estimado para estar listo</div> </div> <div style="font-size:22px;">⏱️</div> </div>
+</div> <div class="card"> <div style="font-weight:900;font-size:14px;margin-bottom:10px;">Ubicación</div> <div style="height:230px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.10); background:radial-gradient(circle at 20% 25%, rgba(99,102,241,.35), transparent 45%), radial-gradient(circle at 80% 60%, rgba(79,70,229,.25), transparent 55%), linear-gradient(135deg, #0B1220, #121A2A); position:relative; overflow:hidden; display:flex;align-items:center;justify-content:center;"> <div style="position:absolute;width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary-dark)); display:flex;align-items:center;justify-content:center;font-weight:900;left:18%;top:28%;">☕</div> <div style="position:absolute;width:46px;height:46px;border-radius:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18); display:flex;align-items:center;justify-content:center;font-weight:900;right:18%;bottom:26%;">👤</div> <div style="position:absolute;left:12px;bottom:12px;font-size:12px;color:rgba(255,255,255,.70);"> mapa (sin GPS real)</div> </div> <div style="margin-top:10px;font-size:12px;color:var(--muted);line-height:1.35;"> Esta vista se integrará con ubicación y/o plano del campus según se requiera. </div>
+</div> <div class="card"> <div style="font-weight:900;font-size:14px;">Progreso</div> <div style="margin-top:12px;display:grid;gap:12px;"> <div style="display:flex;gap:12px;align-items:flex-start;"> <div style="width:12px;height:12px;border-radius:999px;background:var(--ok);margin-top:4px;"></div> <div> <div style="font-weight:900;font-size:13px;">Pedido recibido</div> <div style="margin-top:3px;font-size:12px;color:var(--muted);">10:12 AM • Confirmado por la cafetería</div> </div> </div> <div style="display:flex;gap:12px;align-items:flex-start;"> <div style="width:12px;height:12px;border-radius:999px;background:var(--primary);margin-top:4px;"></div> <div> <div style="font-weight:900;font-size:13px;">En preparación</div> <div style="margin-top:3px;font-size:12px;color:var(--muted);">Tu pedido ya está en proceso</div> </div> </div> <div style="display:flex;gap:12px;align-items:flex-start;opacity:.65;"> <div style="width:12px;height:12px;border-radius:999px;background:rgba(255,255,255,.18);margin-top:4px;"></div> <div> <div style="font-weight:900;font-size:13px;">Listo para recoger</div> <div style="margin-top:3px;font-size:12px;color:var(--muted);">Se activará una notificación cuando esté listo</div> </div> </div> </div> <div style="display:flex;gap:10px;margin-top:12px;"> <button class="btn" onclick="location.href='pedido-detalle.html'">Ver detalle</button> <button class="btn primary" onclick="location.href='pedido-listo.html'">Simular listo</button> </div>
+</div> </div> <div class="bottomnav"> <a class="tab " href="home.html">🍽️<span>Menú</span></a> <a class="tab " href="marketplace.html">🛍️<span>Market</span></a> <a class="tab active" href="mis-pedidos.html">📦<span>Pedidos</span></a> <a class="tab " href="perfil.html">👤<span>Perfil</span></a>
+</div> 
+
+<script>
+function applySavedTheme(){
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark'){ document.body.classList.add('dark'); }
+  else { document.body.classList.remove('dark'); }
+}
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
+document.addEventListener('DOMContentLoaded', applySavedTheme);
+</script>
+
+</body>
+</html>

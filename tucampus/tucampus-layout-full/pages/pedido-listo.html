@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TuCampus - Pedido Listo</title>
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/components.css">
+</head>
+<body class="centered"> <div class="phone"> <div class="navbar"> <div class="nav-left"> <button class="iconbtn" onclick="history.back()">←</button> <h2>Pedido Listo</h2> </div> <div class="nav-right">
+      <button class="iconbtn" title="Configuración">⚙️</button>
+      <button class="iconbtn" onclick="toggleTheme()" title="Cambiar tema">🌓</button>
+    </div>
+  </div> <div class="card" style="text-align:center;padding:30px 20px;box-shadow:0 25px 60px rgba')">Mostrar QR</button> </div> <div style="font-size:12px;color:var(--muted);margin-top:12px;">Muestra tu código QR al momento de recoger.</div>
+</div> </div> <div class="bottomnav"> <a class="tab " href="home.html">🍽️<span>Menú</span></a> <a class="tab " href="marketplace.html">🛍️<span>Market</span></a> <a class="tab active" href="mis-pedidos.html">📦<span>Pedidos</span></a> <a class="tab " href="perfil.html">👤<span>Perfil</span></a>
+</div> 
+
+<script>
+function applySavedTheme(){
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark'){ document.body.classList.add('dark'); }
+  else { document.body.classList.remove('dark'); }
+}
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
+document.addEventListener('DOMContentLoaded', applySavedTheme);
+</script>
+
+</body>
+</html>
